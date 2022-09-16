@@ -7,9 +7,11 @@ interface ICard {
 export const Card = ({ res }: ICard) => {
     return (
         <div>
-            <img src={res.urls.small} alt={res.alt_description || 'photo'} />
-            <p>{res.description}</p>
-            <h4> ❤️: {res.likes}</h4>
+            <img src={res.urls.small} alt={res.alt_description || 'photo'} loading="lazy" />
+            <div className="hidden">
+                <h4>{res.description}</h4>
+                <b>{res.likes} ❤️</b>
+            </div>
         </div>
     )
 }

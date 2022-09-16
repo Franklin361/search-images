@@ -13,6 +13,8 @@ export const useFormQuery = () => {
 
         const { form } = Object.fromEntries(new FormData(target))
 
+        if (form.toString().trim().length === 0) return
+
         setQuery(form.toString())
 
         target.reset()

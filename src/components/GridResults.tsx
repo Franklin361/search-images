@@ -6,6 +6,7 @@ import { Card } from './Card';
 
 import { getImages } from "../utils"
 import { ResponseAPI } from '../interface';
+import { Loading } from './Loading';
 
 
 
@@ -20,13 +21,21 @@ export const GridResults = ({ query, isLoading: setLoading }: IGridResults) => {
 
     useEffect(() => setLoading(isLoading), [isLoading])
 
-    if (isLoading) return <p>Loading results</p>
+    if (isLoading) return <Loading />
 
     if (isError) return <p>{(error as AxiosError).message}</p>
 
-    if (data && data.results.length === 0) return <p>No results with: {query}</p>
 
     return (
-        <div> {data.results.map(res => (<Card key={res.id} res={res} />))} </div>
+        <>
+            <p className='no-results'>
+                {data && data.results.length === 0 ? 'No results with: ' : 'Results with: '}
+                <b>{query}</b>
+            </p>
+
+            <div className='grid'>
+                {data.results.map(res => (<Card key={res.id} res={res} />))}
+            </div>
+        </>
     )
 }
