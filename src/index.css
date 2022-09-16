@@ -7,3 +7,20 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
+
+body {
+  /* background: rgb(7, 6, 6); */
+  background: rgb(235, 225, 225);
+}
+
+h1 {
+  display: block;
+  width: fit-content;
+  margin: .3em auto;
+  font-size: 6em;
+  font-weight: 900;
+  background: #12c2e9;
+  background-image: linear-gradient(to right, #d331b0, #8871ed, #9d45c9);
+  background-clip: text;
+  color: transparent;
+}

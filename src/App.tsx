@@ -1,7 +1,9 @@
 
 const App = () => {
   return (
-    <div>App </div>
+    <div>
+      <h1>Search Image</h1>
+    </div>
   )
 }
 export default App
