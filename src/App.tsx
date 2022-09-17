@@ -11,7 +11,7 @@ const App = () => {
 
       <Form handleSubmit={handleSubmit} isLoading={isLoading} />
 
-      {query.length > 0 && <GridResults query={query} isLoading={handleLoading} />}
+      {query.length > 0 && <GridResults query={query} handleLoading={handleLoading} />}
     </div>
   )
 }

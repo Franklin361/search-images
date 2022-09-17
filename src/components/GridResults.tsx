@@ -1,25 +1,25 @@
-import { useEffect } from 'react';
-import { AxiosError } from 'axios';
 import { useQuery } from '@tanstack/react-query';
+import { AxiosError } from 'axios';
+import { useEffect } from 'react';
 
 import { Card } from './Card';
 
-import { getImages } from "../utils"
 import { ResponseAPI } from '../interface';
+import { getImages } from "../utils";
 import { Loading } from './Loading';
 
 
 
 interface IGridResults {
-    isLoading: (e: boolean) => void
+    handleLoading: (e: boolean) => void
     query: string
 }
 
-export const GridResults = ({ query, isLoading: setLoading }: IGridResults) => {
+export const GridResults = ({ query, handleLoading }: IGridResults) => {
 
-    const { data, isLoading, error, isError } = useQuery<ResponseAPI>(['images', query], () => getImages(query))
+    const { data, isLoading, error, isError } = useQuery<ResponseAPI>([query], () => getImages(query))
 
-    useEffect(() => setLoading(isLoading), [isLoading])
+    useEffect(() => handleLoading(isLoading), [isLoading])
 
     if (isLoading) return <Loading />
 
