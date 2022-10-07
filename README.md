@@ -54,6 +54,6 @@ This time, we are going to implement the search images using React JS and React 
 
 ### Here's the link to the tutorial in case you'd like to take a look at it! eyes 👀
 
-- 🇲🇽 🔗 
+- 🇲🇽 🔗 https://dev.to/franklin030601/buscador-de-imagenes-con-react-js-react-query-1m6f
 
-- 🇺🇲 🔗 
+- 🇺🇲 🔗 https://dev.to/franklin030601/image-search-engine-with-react-js-react-query-39
